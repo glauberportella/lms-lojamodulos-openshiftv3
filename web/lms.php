@@ -8,8 +8,8 @@ if (!isset($_REQUEST['domain']) || empty($_REQUEST['domain'])) {
     die('Nenhum domínio informado.');
 }
 
-$database_host = getenv('mysql_SERVICE_HOST');
-$database_port = getenv('mysql_SERVICE_PORT');
+$database_host = getenv('MYSQL_SERVICE_HOST');
+$database_port = getenv('MYSQL_SERVICE_PORT');
 $database_name = getenv("MYSQL_DATABASE");
 $database_user = getenv("MYSQL_USER");
 $database_password = getenv("MYSQL_PASSWORD");

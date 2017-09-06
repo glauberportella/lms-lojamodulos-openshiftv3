@@ -12,11 +12,11 @@ if (!isset($_REQUEST['domain']) || empty($_REQUEST['domain'])) {
         die('Nenhum domínio informado.');
 }
 
-$database_host = getenv("OPENSHIFT_MYSQL_DB_HOST");
-$database_port = getenv("OPENSHIFT_MYSQL_DB_PORT");
-$database_name = getenv("OPENSHIFT_APP_NAME");
-$database_user = getenv("OPENSHIFT_MYSQL_DB_USERNAME");
-$database_password = getenv("OPENSHIFT_MYSQL_DB_PASSWORD");
+$database_host = getenv("MYSQL_SERVICE_HOST");
+$database_port = getenv("MYSQL_SERVICE_PORT");
+$database_name = getenv("MYSQL_DATABASE");
+$database_user = getenv("MYSQL_USER");
+$database_password = getenv("MYSQL_PASSWORD");
 
 $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s', $database_host, $database_port, $database_name);
 
