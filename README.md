@@ -10,3 +10,11 @@ MYSQL_DATABASE=database name
 MYSQL_USER=user name
 MYSQL_PASSWORD=user password
 ```
+
+Init services
+
+`docker-compose up -d`
+
+Install dependencies
+
+`docker-compose run composer install --no-dev`

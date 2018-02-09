@@ -27,3 +27,11 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+
+  composer:
+    restart: 'no'
+    image: composer/composer:php7
+    command: install
+    volumes:
+        - .:/app
