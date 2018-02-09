@@ -1,3 +1,6 @@
 .phpintel
 /database/token.sql
 /vendor
+.env
+info.php
+/.data

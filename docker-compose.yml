@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  db:
+    image: mysql
+    ports:
+      - 3366:3306
+    volumes:
+      - ./.data/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+
+  app:
+    build: ./docker/php
+    depends_on:
+      - db
+    ports:
+      - 8088:80
+    volumes:
+      - .:/var/www/html
+    environment:
+      LMSDB_SERVICE_HOST: ${LMSDB_SERVICE_HOST}
+      LMSDB_SERVICE_PORT: ${LMSDB_SERVICE_PORT}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}

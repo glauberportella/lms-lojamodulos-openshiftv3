@@ -1,3 +1,23 @@
+#<Files .htaccess>
+#	Order allow, deny
+#	Deny from all
+#</Files>
+#
+#<Directory  "./docker">
+#	Order allow,deny
+#	Deny from all
+#</Directory>
+#
+#<Directory  "./fake">
+#	Order allow,deny
+#	Deny from all
+#</Directory>
+#
+#<Directory  "./vendor">
+#	Order allow,deny
+#	Deny from all
+#</Directory>
+
 <IfModule mod_rewrite.c>
     Options -MultiViews
     RewriteEngine On
